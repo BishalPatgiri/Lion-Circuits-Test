@@ -1,32 +1,30 @@
+//import axios from 'axios'
+import axios from 'axios'
 import React, { useState } from 'react'
-import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getLocalData, saveLocalData } from './utils/localStorage'
+import { saveLocalData } from './utils/localStorage'
 
 export const Signup = () => {
-    const data=getLocalData("auth")
     // const [local,setLocal]=useState({})
 
     const [email,setEmail]=useState("")
     const [pass,setPass]=useState("")
     const [name,setName]=useState("")
     const [mobile,setMobile]=useState("")
+    const [address,setAddress]=useState("")
     const navigate=useNavigate()
 
     // useEffect(()=>{
     //     setLocal(data)
     // },[data])
 
-    console.log(data)
-
-    const handleStore=()=>{
-        const dataStore={
-            email:email,
-            pass:pass,
-            name:name,
-            mobile:mobile
-        }
-        saveLocalData("auth",dataStore)
+    const handleStore=(e)=>{
+        e.preventDefault()
+        axios.patch("https://lion-project-data.herokuapp.com/userDetail/1",{name:name})
+        axios.post(`https://lion-project-data.herokuapp.com/address`,{place:address})
+        axios.post(`https://lion-project-data.herokuapp.com/mobile`,{number:mobile})
+        saveLocalData("email",email)
+        saveLocalData("pass",pass)
         navigate("/")
     }
 
@@ -37,7 +35,7 @@ export const Signup = () => {
             <h2 style={{textAlign:"center",marginBottom:"15px"}}>Sign-Up</h2>
             <div>
                 <label htmlFor="">Name</label>
-                <input value={name} onChange={(e)=>setName(e.target.value)} style={{width:"100%",height:"32px",marginBottom:"20px",paddingLeft:"10px"}} type="email" name=""/>
+                <input value={name} onChange={(e)=>setName(e.target.value)} style={{width:"100%",height:"32px",marginBottom:"20px",paddingLeft:"10px"}} type="text" name=""/>
             </div>
             <div>
                 <label htmlFor="">Email Id</label>
@@ -46,6 +44,10 @@ export const Signup = () => {
             <div>
                 <label htmlFor="">Mobile No</label>
                 <input value={mobile} onChange={(e)=>setMobile(e.target.value)} style={{width:"100%",height:"32px",marginBottom:"20px",paddingLeft:"10px"}} type="number" name=""/>
+            </div>
+            <div>
+                <label htmlFor="">Address</label>
+                <input value={address} onChange={(e)=>setAddress(e.target.value)} style={{width:"100%",height:"32px",marginBottom:"20px",paddingLeft:"10px"}} type="text" maxLength={100} name=""/>
             </div>
             <div>
                 <label htmlFor="">Password</label>

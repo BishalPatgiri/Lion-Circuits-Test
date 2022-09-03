@@ -1,14 +1,12 @@
 import React from 'react'
 import { Navbar } from './Navbar'
 import { useState,useEffect} from 'react'
-import { getLocalData } from './utils/localStorage'
-import { useNavigate } from 'react-router-dom'
+import { getLocalData, saveLocalData } from './utils/localStorage'
 
 export const HomePage = () => {
     const [email,setEmail]=useState("")
     const [pass,setPass]=useState("")
     const [name,setName]=useState("")
-    const navigate=useNavigate()
 
     useEffect(() => {
         let inpu=getLocalData("auth")
@@ -21,11 +19,16 @@ export const HomePage = () => {
     
 
     const handleCheck=()=>{
-        const authData=getLocalData("auth")
-        if(authData){
-            if(authData.email===email && authData.pass===pass)
+        const localemail=getLocalData("email")
+        const localpass=getLocalData("pass")
+        if(localemail&&localpass){
+            if(localemail===email && localpass===pass)
             {
-                navigate("/product")
+                saveLocalData("auth",true)
+                alert("Login Successful")
+            }
+            else{
+                alert("Give Correct Credentials")
             }
         }
         else{
