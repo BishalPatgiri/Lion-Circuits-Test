@@ -1,6 +1,13 @@
 # Lion Circuits Internship Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tech Stacks used in this Project are:
+- ReactJS
+- CSS
+- Axios library
+- React Router Dom library
+- fakestore RESTAPI
+- Heroku and netlify
 
 ## Steps need to follow to get started with this app
 ### Firstly, you have to clone this repo to your local system.
