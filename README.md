@@ -22,4 +22,4 @@ You may also see any lint errors in the console.
 
 ## For better understanding and exploring the features of the app more easily please see the below demo video,
 
-
+[![Watch the video](https://pbs.twimg.com/profile_images/820591384155537413/ZuSg7rUg_200x200.jpg)](https://drive.google.com/file/d/1z4NxQSmXTfM0aSYy8p9tm__6lmJ942jJ/view?usp=sharing)
