@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - CSS
 - Axios library
 - React Router Dom library
-- fakestore RESTAPI
+- Fakestore RESTAPI
 - Heroku and netlify
 
 ## Steps need to follow to get started with this app
