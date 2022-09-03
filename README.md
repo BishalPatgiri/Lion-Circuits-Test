@@ -1,6 +1,8 @@
 # Lion Circuits Internship Project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Deployed link
+`https://cheerful-daffodil-720f1f.netlify.app/`
 ## Tech Stacks used in this Project are:
 - ReactJS
 - CSS
