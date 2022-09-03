@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <a href="https://cheerful-daffodil-720f1f.netlify.app/" target="blank">Click Here</a>
 ## Tech Stacks used in this Project are:
 - ReactJS
+- Redux
 - CSS
 - Axios library
 - React Router Dom library
